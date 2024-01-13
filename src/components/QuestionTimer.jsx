@@ -7,6 +7,7 @@ export default function QuestionTimer({ timeout, onTimeout }) {
     console.log("SETTING TIMEOUT");
     const timer = setTimeout(onTimeout, timeout);
 
+    // This runs when the components dismounts.
     return () => {
       clearTimeout(timer);
     };
@@ -18,6 +19,7 @@ export default function QuestionTimer({ timeout, onTimeout }) {
       setRemainingTime((prevRemainingTime) => prevRemainingTime - 100);
     }, 100);
 
+    // This runs when the components dismounts.
     return () => {
       clearInterval(interval);
     };
